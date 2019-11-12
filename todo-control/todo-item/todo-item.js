@@ -23,7 +23,6 @@ export class ToDoItem extends Component {
   render() {
     return (
       <ListItem>
-        <ListItemIcon />
         <ListItemAvatar>
           <Avatar>
             <AssignmentIcon />
