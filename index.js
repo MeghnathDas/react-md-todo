@@ -4,7 +4,7 @@ import "./style.css";
 import "typeface-roboto";
 
 import Container from "@material-ui/core/Container ";
-import {ToDo} from "./todo-control/todo";
+import { ToDo } from "./todo-control/todo";
 
 class App extends Component {
   constructor() {

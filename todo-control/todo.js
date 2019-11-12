@@ -9,19 +9,25 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
+import List from '@material-ui/core/List';
+
+import { ToDoItem } from "./todo-item/todo-item";
+
 export class ToDo extends Component {
   constructor() {
     super();
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
     return (
       <Card className="todo-area">
-        <CardHeader title="To Do List - Using React" />
+        <CardHeader title="To Do List - Using React"
+        subheader="&nbsp;by MD" />
         <CardContent>
-          <p>Start editing to see some magic happen :)</p>
+          <List dense="true">
+            <ToDoItem />
+          </List>
         </CardContent>
       </Card>
     );
