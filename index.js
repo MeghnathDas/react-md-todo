@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
+      <Container maxWidth="sm">
         <ToDo />
       </Container>
     );
