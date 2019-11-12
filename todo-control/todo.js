@@ -27,6 +27,9 @@ export class ToDo extends Component {
         <CardContent>
           <List dense="true">
             <ToDoItem />
+            <ToDoItem />
+            <ToDoItem />
+            <ToDoItem />
           </List>
         </CardContent>
       </Card>

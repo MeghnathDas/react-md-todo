@@ -28,7 +28,7 @@ export class ToDoItem extends Component {
             <AssignmentIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Single-line item" secondary="Secondary text" />
+        <ListItemText primary="Todo Item 1" secondary="Added on: 02-Nov-2018" />
         <ListItemSecondaryAction>
           <IconButton edge="end" aria-label="delete">
             <DeleteIcon />
