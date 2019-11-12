@@ -1,3 +1,6 @@
 h1, p {
   font-family: Lato;
 }
+html {
+  background-color: #fcfcfc;
+}
