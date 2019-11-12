@@ -1,27 +1,26 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
-import './style.css';
-import 'typeface-roboto';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import "./style.css";
+import "typeface-roboto";
+
+import Container from "@material-ui/core/Container ";
+import {ToDo} from "./todo-control/todo";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'React'
+      name: "React"
     };
   }
 
   render() {
     return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
+      <Container>
+        <ToDo />
+      </Container>
     );
   }
 }
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById("root"));
