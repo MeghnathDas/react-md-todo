@@ -12,7 +12,7 @@ import List from "@material-ui/core/List";
 
 import Container from "@material-ui/core/Container ";
 import { ToDoCollection } from "./todo-control/todo-collection";
-import { ToDoEntry } from "./todo-control/todo-entry/todo-entry";
+import { ToDoEntry } from "./todo-entry/todo-entry";
 
 class App extends Component {
   constructor(props) {
