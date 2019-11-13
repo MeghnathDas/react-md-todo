@@ -18,7 +18,7 @@ import DoneIcon from "@material-ui/icons/Done";
 
 import moment from "moment";
 
-export class ToDoContectItem extends Component {
+export class ToDoContentItem extends Component {
   constructor(props) {
     super(props);
   }
