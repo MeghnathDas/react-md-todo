@@ -29,7 +29,7 @@ export class ToDoItem extends Component {
     } else if (this.props.value.status == 1) {
       avtr = <AssignmentTurnedInIcon />
     }
-
+    
     return (
       <ListItem>
         <ListItemAvatar>
@@ -37,9 +37,9 @@ export class ToDoItem extends Component {
             {avtr}
           </Avatar>
         </ListItemAvatar>
-        <ListItemText
+        <ListItemText className="sub-title"
           primary={this.props.value.title}
-          secondary={moment(this.props.value.createdOn).format(
+          secondary={"Created on: " + moment(this.props.value.createdOn).format(
             "DD-MM-YYYY HH:mm"
           )}
         />
