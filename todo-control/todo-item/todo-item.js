@@ -8,11 +8,13 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
+import Tooltip from "@material-ui/core/Tooltip";
 import IconButton from "@material-ui/core/IconButton";
 import FolderIcon from "@material-ui/icons/Folder";
 import DeleteIcon from "@material-ui/icons/Delete";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
+import DoneIcon from "@material-ui/icons/Done";
 
 import moment from "moment";
 
@@ -23,30 +25,41 @@ export class ToDoItem extends Component {
 
   render() {
     let avtr;
+    let doneBtn;
 
     if (this.props.value.status == 0) {
-      avtr = <AssignmentIcon />
+      avtr = <AssignmentIcon />;
+      doneBtn = (
+        <Tooltip title="Mark as done" placement="bottom-start">
+          <IconButton edge="end" aria-label="mark-done">
+            <DoneIcon />
+          </IconButton>
+        </Tooltip>
+      );
     } else if (this.props.value.status == 1) {
-      avtr = <AssignmentTurnedInIcon />
+      avtr = <AssignmentTurnedInIcon />;
     }
-    
+
     return (
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
-            {avtr}
-          </Avatar>
+          <Avatar>{avtr}</Avatar>
         </ListItemAvatar>
-        <ListItemText className="sub-title"
+        <ListItemText
+          className="todo-title"
           primary={this.props.value.title}
-          secondary={"Created on: " + moment(this.props.value.createdOn).format(
-            "DD-MM-YYYY HH:mm"
-          )}
+          secondary={
+            "Created on: " +
+            moment(this.props.value.createdOn).format("DD-MM-YYYY HH:mm")
+          }
         />
         <ListItemSecondaryAction>
-          <IconButton edge="end" aria-label="delete">
-            <DeleteIcon />
-          </IconButton>
+          {doneBtn}
+          <Tooltip title="Delete">
+            <IconButton edge="end" aria-label="delete">
+              <DeleteIcon />
+            </IconButton>
+          </Tooltip>
         </ListItemSecondaryAction>
       </ListItem>
     );
