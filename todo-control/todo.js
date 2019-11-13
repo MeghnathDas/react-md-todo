@@ -10,7 +10,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
 import List from "@material-ui/core/List";
-
+import { ToDoEntry } from "./todo-entry/todo-entry";
 import { ToDoItem } from "./todo-item/todo-item";
 
 export class ToDo extends Component {
@@ -27,6 +27,7 @@ export class ToDo extends Component {
       <Card className="todo-area">
         <CardHeader title="To Do List - Using React" subheader="&nbsp;by MD" />
         <CardContent>
+          <ToDoEntry />
           <List dense="true">{this.state.itms}</List>
         </CardContent>
       </Card>

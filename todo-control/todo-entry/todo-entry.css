@@ -1,0 +1,7 @@
+.todo-entry-form {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.todo-entry-form > .MuiFormControl-marginNormal {
+  margin-top: 0px !important;
+}
