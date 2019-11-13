@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import "./todo-item.css";
+import "./todo-content-item.css";
 
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -18,7 +18,7 @@ import DoneIcon from "@material-ui/icons/Done";
 
 import moment from "moment";
 
-export class ToDoItem extends Component {
+export class ToDoContectItem extends Component {
   constructor(props) {
     super(props);
   }
