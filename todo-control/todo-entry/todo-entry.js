@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from '@material-ui/core/Button';
-import Fab from '@material-ui/core/Fab';
-import IconButton from '@material-ui/core/IconButton';
-import AddIcon from '@material-ui/icons/Add';
-import SaveIcon from '@material-ui/icons/Save';
+import Button from "@material-ui/core/Button";
+import Fab from "@material-ui/core/Fab";
+import IconButton from "@material-ui/core/IconButton";
+import AddIcon from "@material-ui/icons/Add";
+import SaveIcon from "@material-ui/icons/Save";
 import "./todo-entry.css";
 
 export class ToDoEntry extends Component {
@@ -21,12 +21,14 @@ export class ToDoEntry extends Component {
           helperText=""
           margin="normal"
         />
-        <Button variant="contained"
-        color="primary"
-        size="small"
-        startIcon={<SaveIcon />}>
-        Add
-      </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          size="small"
+          startIcon={<SaveIcon />}
+        >
+          Add
+        </Button>
       </form>
     );
   }
