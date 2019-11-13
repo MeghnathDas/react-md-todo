@@ -11,3 +11,11 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+.todo-area > .MuiCardHeader-root {
+  background-color: #303f9f;
+  color: white;
+}
+.todo-area > .MuiCardHeader-root > 
+.MuiCardHeader-content > .MuiTypography-colorTextSecondary {
+  color: white;
+}
