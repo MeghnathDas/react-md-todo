@@ -11,7 +11,7 @@ import CardContent from "@material-ui/core/CardContent";
 import List from "@material-ui/core/List";
 
 import Container from "@material-ui/core/Container ";
-import { ToDoCollection } from "./todo-control/todo-collection";
+import { ToDoContent } from "./todo-content/todo-content";
 import { ToDoEntry } from "./todo-entry/todo-entry";
 
 class App extends Component {
@@ -34,7 +34,7 @@ class App extends Component {
         <CardHeader title="To Do List - Using React" subheader="&nbsp;by MD" />
         <CardContent>
           <ToDoEntry />
-          <ToDoCollection values={this.state.todoData} />
+          <ToDoContent values={this.state.todoData} />
         </CardContent>
       </Card>
       </Container>

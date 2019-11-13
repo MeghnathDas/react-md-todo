@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import "./todo-collection.css";
+import "./todo-content.css";
 import "typeface-roboto";
 
 import List from "@material-ui/core/List";
 import { ToDoItem } from "./todo-item/todo-item";
 
-export class ToDoCollection extends Component {
+export class ToDoContent extends Component {
   constructor(props) {
     super(props);
     this.state = { 
