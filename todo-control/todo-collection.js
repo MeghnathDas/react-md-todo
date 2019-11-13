@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import "./todo.css";
+import "./todo-collection.css";
 import "typeface-roboto";
 
 import List from "@material-ui/core/List";
