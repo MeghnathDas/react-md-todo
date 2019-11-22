@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { render } from "react-dom";
 import "typeface-roboto";
 import './App.css';
 
@@ -13,10 +12,6 @@ import { ToDoEntry } from "./todo-entry/todo-entry";
 
 
 export class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   render() {
     return (
       <Container maxWidth="sm">
