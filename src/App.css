@@ -21,3 +21,9 @@ html {
 .todo-area > .MuiCardHeader-root > .MuiCardHeader-content > .MuiTypography-colorTextSecondary {
   color: white;
 }
+@media only screen and (max-device-width: 420px) and (orientation: portrait) {
+  .todo-area {
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+}
