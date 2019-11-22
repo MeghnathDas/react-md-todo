@@ -17,6 +17,9 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  .MuiPaper-rounded {
+    border-radius: 0 !important;
+  }
   .MuiListItemSecondaryAction-root {
     display: flex;
     flex-direction: column;
