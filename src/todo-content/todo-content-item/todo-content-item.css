@@ -1,12 +1,15 @@
-.todo-title > .MuiTypography-colorTextSecondary {
-  font-size: .75rem;
+.todo-title {
+  max-width: 210px;
 }
-
-@media only screen and (max-width: 380px) {
-  .MuiIconButton-root {
-    padding: 8px !important;
+.todo-title > .MuiTypography-colorTextSecondary {
+  font-size: 0.75rem;
+}
+@media only screen and (max-width: 420px) and (orientation: portrait) {
+  .MuiListItemSecondaryAction-root {
+    display: flex;
+    flex-direction: column;
   }
-  .todo-title {
-    max-width: 90px;
+  .MuiListItemSecondaryAction-root > button {
+    padding: 4px;
   }
 }
