@@ -63,7 +63,7 @@ export class ToDoContent extends Component {
     if (this.state.isLoading === true) {
       return (<div className="loading-spinner-area"><CircularProgress /></div>);
     } else {
-      return (<List dense>
+      return (<List className="list-area" dense>
         {this.state.todoData.map(todo =>
           <ToDoContentItem key={todo.id} value={todo}
             onMarkDone={this.markTodoItemAsDone.bind(this, todo.id)}

@@ -4,10 +4,23 @@
 .todo-title > .MuiTypography-colorTextSecondary {
   font-size: 0.75rem;
 }
-@media only screen and (max-width: 420px) and (orientation: portrait) {
+.list-area {
+  margin-top: 6px !important;
+  overflow: auto;
+  max-height: calc(100vh - 150px);
+}
+@media only screen and (max-device-width: 420px) and (orientation: portrait) {
+  .todo-area {
+    margin-top: 0;
+  }
+  .MuiContainer-root {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .MuiListItemSecondaryAction-root {
     display: flex;
     flex-direction: column;
+    margin-top: 4px;
   }
   .MuiListItemSecondaryAction-root > button {
     padding: 4px;
