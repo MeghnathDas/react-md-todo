@@ -28,4 +28,7 @@
   .MuiListItemSecondaryAction-root > button {
     padding: 4px;
   }
+  .list-area {
+    min-height: calc(100vh - 120px);
+  }
 }
