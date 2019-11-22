@@ -10,14 +10,17 @@ import firebase from "../firebase";
 
 export class ToDoEntry extends Component {
   constructor(props) {
-    super(props);    
-    this.ref = firebase.firestore().collection('todos');
+    super(props);
+    this.titleInputRef = React.createRef();
+    this.dbRef = firebase.firestore().collection('todos');
     this.state = {
-      todoTitle: ''
+      todoTitle: '',
+      isLoading: false
     };
   }
 
   onChange = (e) => {
+    if (this.state.isLoading === true) { return; }
     const state = this.state
     state[e.target.name] = e.target.value;
     this.setState(state);
@@ -26,16 +29,28 @@ export class ToDoEntry extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     if (!this.state.todoTitle) { return; }
-    this.ref.add({
+    if (this.state.isLoading === true) { return; }
+
+    this.setState({
+      isLoading: true
+    });
+
+    this.dbRef.add({
       title: this.state.todoTitle,
       createdOn: new Date(),
       status: 0
     }).then((docRef) => {
       this.setState({
-        todoTitle: ''
+        todoTitle: '',
+        isLoading: false
       });
+      console.log(this.titleInputRef.current);
+      this.titleInputRef.current.focus();
     }).catch((error) => {
       console.error("Error adding document: ", error);
+      this.setState({
+        isLoading: false
+      });
     });
   }
 
@@ -50,6 +65,7 @@ export class ToDoEntry extends Component {
           label="Enter To Do text"
           helperText=""
           margin="normal"
+          ref={this.titleInputRef}
           value={this.state.todoTitle}
           onChange={this.onChange}
         />
@@ -57,8 +73,8 @@ export class ToDoEntry extends Component {
           variant="contained"
           color="primary"
           size="small"
-          startIcon={<SaveIcon />}
-        >
+          disabled={this.state.isLoading}
+          startIcon={<SaveIcon />}>
           Add
         </Button>
       </form>
