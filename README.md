@@ -4,6 +4,7 @@
 ### Technologies Used
 - React JS, 
 - Material UI
+- Responsive Design
 - Cloud Firestore 
 - Firebase Hosting
 
