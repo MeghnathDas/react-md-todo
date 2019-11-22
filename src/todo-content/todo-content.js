@@ -63,13 +63,15 @@ export class ToDoContent extends Component {
     if (this.state.isLoading === true) {
       return (<div className="loading-spinner-area"><CircularProgress /></div>);
     } else {
-      return (<List className="list-area" dense>
+      return (<div className="list-area">
+      <List dense>
         {this.state.todoData.map(todo =>
           <ToDoContentItem key={todo.id} value={todo}
             onMarkDone={this.markTodoItemAsDone.bind(this, todo.id)}
             onRemove={this.deleteTodoItem.bind(this, todo.id)} />
         )}
-      </List>);
+      </List>
+      </div>);
     }
   }
 }

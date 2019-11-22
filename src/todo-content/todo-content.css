@@ -1,6 +1,23 @@
 .loading-spinner-area {
-    width: inherit;
-    text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
+  width: inherit;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.list-area {
+  margin-top: 6px !important;
+  overflow: auto;
+  max-height: 64vh;
+}
+@media only screen and (max-device-width: 420px) and (orientation: portrait) {
+  .todo-area {
+    margin-top: 0 !important;
+  }
+  .MuiContainer-root {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .MuiPaper-rounded {
+    border-radius: 0 !important;
+  }
 }

@@ -4,22 +4,8 @@
 .todo-title > .MuiTypography-colorTextSecondary {
   font-size: 0.75rem;
 }
-.list-area {
-  margin-top: 6px !important;
-  overflow: auto;
-  max-height: calc(100vh - 150px);
-}
+
 @media only screen and (max-device-width: 420px) and (orientation: portrait) {
-  .todo-area {
-    margin-top: 0 !important;
-  }
-  .MuiContainer-root {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .MuiPaper-rounded {
-    border-radius: 0 !important;
-  }
   .MuiListItemSecondaryAction-root {
     display: flex;
     flex-direction: column;
@@ -27,8 +13,5 @@
   }
   .MuiListItemSecondaryAction-root > button {
     padding: 4px;
-  }
-  .list-area {
-    min-height: calc(100vh - 120px);
   }
 }
