@@ -8,7 +8,8 @@ html {
 .todo-area {
   margin-top: 1rem;
   max-width: 25rem;
-  min-height: 15rem;
+  min-height: 100vh;
+  max-height: 100vh;
   margin-left: auto;
   margin-right: auto;
 }
@@ -18,11 +19,4 @@ html {
 }
 .todo-area > .MuiCardHeader-root > .MuiCardHeader-content > .MuiTypography-colorTextSecondary {
   color: white;
-}
-
-@media only screen and (max-device-width: 420px) and (orientation: portrait) {
-  .todo-area {
-    min-height: 100vh;
-    max-height: 100vh;
-  }
 }
