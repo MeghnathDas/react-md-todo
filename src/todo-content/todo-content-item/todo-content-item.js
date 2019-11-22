@@ -31,7 +31,7 @@ export class ToDoContentItem extends Component {
       avtr = <AssignmentIcon />;
       doneBtn = (
         <Tooltip title="Mark as done" placement="bottom-start">
-          <IconButton edge="end" aria-label="mark-done">
+          <IconButton edge="end" aria-label="mark-done" onClick={this.props.onMarkDone}>
             <DoneIcon />
           </IconButton>
         </Tooltip>
@@ -56,7 +56,7 @@ export class ToDoContentItem extends Component {
         <ListItemSecondaryAction>
           {doneBtn}
           <Tooltip title="Delete">
-            <IconButton edge="end" aria-label="delete">
+            <IconButton edge="end" aria-label="delete" onClick={this.props.onRemove}>
               <DeleteIcon />
             </IconButton>
           </Tooltip>

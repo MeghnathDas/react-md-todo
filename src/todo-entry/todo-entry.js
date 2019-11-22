@@ -12,6 +12,28 @@ export class ToDoEntry extends Component {
   //   super(props);
   // }
 
+  onSubmit = (e) => {
+    e.preventDefault();
+
+    const { title, description, author } = this.state;
+
+    this.ref.add({
+      title,
+      description,
+      author
+    }).then((docRef) => {
+      this.setState({
+        title: '',
+        description: '',
+        author: ''
+      });
+      this.props.history.push("/")
+    })
+    .catch((error) => {
+      console.error("Error adding document: ", error);
+    });
+  }
+  
   render() {
     return (
       <form className="todo-entry-form" noValidate autoComplete="off">

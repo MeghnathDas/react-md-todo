@@ -12,7 +12,7 @@ import firebase from '../firebase';
 export class ToDoContent extends Component {
   constructor(props) {
     super(props);
-    
+
     this.ref = firebase.firestore().collection('todos');
     this.unsubscribe = null;
     this.state = {
@@ -33,22 +33,42 @@ export class ToDoContent extends Component {
       });
     });
     this.setState({
-      todoData,      
+      todoData,
       isLoading: false
-   });
+    });
+  }
+
+  markTodoItemAsDone(todoId) {
+    const updateRef = firebase.firestore().collection('todos').doc(todoId);
+    updateRef.update({
+      status: 1
+    }).then((docRef) => {
+      console.log("Marked as done");
+    }).catch((error) => {
+      console.error("Error on mark as done", error);
+    });
+  }
+  deleteTodoItem(todoId) {
+    firebase.firestore().collection('todos').doc(todoId).delete().then(() => {
+      console.log("Document successfully deleted!");
+    }).catch((error) => {
+      console.error("Error removing document: ", error);
+    });
   }
 
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
   }
 
-  render() {  
+  render() {
     if (this.state.isLoading === true) {
       return (<div className="loading-spinner-area"><CircularProgress /></div>);
     } else {
-      return (<List dense="true">
+      return (<List dense>
         {this.state.todoData.map(todo =>
-          <ToDoContentItem value={todo} />
+          <ToDoContentItem key={todo.id} value={todo}
+            onMarkDone={this.markTodoItemAsDone.bind(this, todo.id)}
+            onRemove={this.deleteTodoItem.bind(this, todo.id)} />
         )}
       </List>);
     }
