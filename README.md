@@ -4,7 +4,9 @@
 ### Technologies Used
 - React JS, 
 - Material UI
+- Responsive Design
 - Cloud Firestore 
+- Firebase CLI 
 - Firebase Hosting
 
 Hosted URL -> [https://md-todo.web.app/](https://md-todo.web.app/)
