@@ -7,8 +7,10 @@
 - Cloud Firestore 
 - Firebase Hosting
 
-Hosted URL -> [https://mdtodoapp.web.app/](https://mdtodoapp.web.app/)
+Hosted URL -> [https://md-todo.web.app/](https://md-todo.web.app/)
 
-# Editor.md
+# Editor
 
 ![](https://meghnathdas.github.io/public/images/MD_Logo_138X138.png)
+
+[http://meghnathdas.github.io/](http://meghnathdas.github.io/)
