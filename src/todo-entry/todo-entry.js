@@ -10,7 +10,8 @@ import firebase from "../firebase";
 
 export class ToDoEntry extends Component {
   constructor(props) {
-    super(props);
+    super(props);    
+    this.ref = firebase.firestore().collection('todos');
     this.state = {
       todoTitle: ''
     };
@@ -25,8 +26,7 @@ export class ToDoEntry extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     if (!this.state.todoTitle) { return; }
-    let ref = firebase.firestore().collection('todos');
-    ref.add({
+    this.ref.add({
       title: this.state.todoTitle,
       createdOn: new Date(),
       status: 0
