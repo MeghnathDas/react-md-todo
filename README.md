@@ -7,7 +7,7 @@
 - Cloud Firestore 
 - Firebase Hosting
 
-Hosted URL -> [https://mdtodoapp.web.app/](https://mdtodoapp.web.app/)
+Hosted URL -> [https://md-todo.web.app/](https://md-todo.web.app/)
 
 # Editor.md
 
