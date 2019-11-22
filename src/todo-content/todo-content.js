@@ -4,6 +4,7 @@ import "./todo-content.css";
 import "typeface-roboto";
 
 import List from "@material-ui/core/List";
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { ToDoContentItem } from "./todo-content-item/todo-content-item";
 
 import firebase from '../firebase';
@@ -15,7 +16,8 @@ export class ToDoContent extends Component {
     this.ref = firebase.firestore().collection('todos');
     this.unsubscribe = null;
     this.state = {
-      todoData: []
+      todoData: [],
+      isLoading: true
     };
   }
 
@@ -31,7 +33,8 @@ export class ToDoContent extends Component {
       });
     });
     this.setState({
-      todoData
+      todoData,      
+      isLoading: false
    });
   }
 
@@ -39,12 +42,15 @@ export class ToDoContent extends Component {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
   }
 
-  render() {
-    return (
-      <List dense="true">{this.state.todoData.map(todo =>
-        <ToDoContentItem value={todo} />
-      )}
-      </List>
-    );
+  render() {  
+    if (this.state.isLoading === true) {
+      return (<div className="loading-spinner-area"><CircularProgress /></div>);
+    } else {
+      return (<List dense="true">
+        {this.state.todoData.map(todo =>
+          <ToDoContentItem value={todo} />
+        )}
+      </List>);
+    }
   }
 }
