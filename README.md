@@ -3,9 +3,7 @@
 
 ## Introduction
 
-**To-Do** is a modern, responsive task management application built with React JS and Material UI, powered by Cloud Firestore for real-time data syncing. It enables users to add, edit, delete, and track to-do items effortlessly, ensuring a smooth experience across devices.
-
----
+**To-Do** is a modern, responsive task management application built with React JS and Material UI, powered by Cloud Firestore for real-time data syncing. It enables users to add, edit, delete, and track to-do items effortlessly, ensuring a smooth device experience.
 
 ## Use-Case Diagram
 
