@@ -45,6 +45,9 @@ flowchart TD
 
 ### Sequence Diagram
 
+The sequence diagram below illustrates the step-by-step flow of the **Add To-Do** operation. It shows how user input in the React UI is processed through the Firestore service, stored in Cloud Firestore, and then reflected back in the interface via real-time snapshot listeners.
+
+
 ```mermaid
 sequenceDiagram
     participant U as User
