@@ -42,7 +42,6 @@ flowchart TD
     %% Style for actor
     classDef actor fill:#f9f,stroke:#333,stroke-width:2px;
 ```
----
 
 ## Sequence Diagram
 
@@ -63,7 +62,6 @@ sequenceDiagram
     L->>UI: Update state with new to-do list
     UI->>U: Render updated list with new to-do
 ```
----
 
 ### Technologies Used
 - React JS
@@ -75,10 +73,9 @@ sequenceDiagram
 
 Hosted URL -> [https://md-todo.web.app/](https://md-todo.web.app/)
 
-# Editor
+# Editor/Author
+Meghnath Das
 
 ![](https://meghnathdas.github.io/public/images/MD_Logo_138X138.png)
 
 [http://meghnathdas.github.io/](http://meghnathdas.github.io/)
-
----
