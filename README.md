@@ -1,27 +1,10 @@
 # To Do App
 ###### Author: Meghnath Das
-
-### Technologies Used
-- React JS
-- Material UI
-- Responsive Design
-- Cloud Firestore 
-- Firebase CLI 
-- Firebase Hosting
-
-Hosted URL -> [https://md-todo.web.app/](https://md-todo.web.app/)
-
-# Editor
-
-![](https://meghnathdas.github.io/public/images/MD_Logo_138X138.png)
-
-[http://meghnathdas.github.io/](http://meghnathdas.github.io/)
-
 ---
 
 ## Use-Case Diagram
 
-The diagram below illustrates the main interactions in the **React MD ToDo App** between the user, the application, and Cloud Firestore.  
+The diagram below illustrates the main interactions in the **ToDo App** between the user, the application, and Cloud Firestore.  
 
 ```mermaid
 flowchart TD
@@ -29,7 +12,7 @@ flowchart TD
     U[User]:::actor
 
     %% Define system boundary
-    subgraph SYSTEM["React MD ToDo Application"]
+    subgraph SYSTEM["ToDo Application"]
         UC1[("Add To-Do")]
         UC2[("Edit To-Do")]
         UC3[("Delete To-Do")]
@@ -60,3 +43,43 @@ flowchart TD
     %% Style for actor
     classDef actor fill:#f9f,stroke:#333,stroke-width:2px;
 ```
+---
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant UI as React UI (ToDo Form)
+    participant S as Firestore Service
+    participant DB as Cloud Firestore
+    participant L as Real-time Listener
+
+    U->>UI: Type new to-do & submit
+    UI->>S: Call addTodo(todoData)
+    S->>DB: Write new document
+    DB-->>S: Write acknowledged
+    S-->>UI: Return success status
+    DB-->>L: Trigger snapshot listener with new data
+    L->>UI: Update state with new to-do list
+    UI->>U: Render updated list with new to-do
+```
+---
+
+### Technologies Used
+- React JS
+- Material UI
+- Responsive Design
+- Cloud Firestore 
+- Firebase CLI 
+- Firebase Hosting
+
+Hosted URL -> [https://md-todo.web.app/](https://md-todo.web.app/)
+
+# Editor
+
+![](https://meghnathdas.github.io/public/images/MD_Logo_138X138.png)
+
+[http://meghnathdas.github.io/](http://meghnathdas.github.io/)
+
+---
