@@ -1,5 +1,10 @@
 # To Do App
 ###### Author: Meghnath Das
+
+## Introduction
+
+**React MD To-Do** is a modern, responsive task management application built with React JS and Material UI, powered by Cloud Firestore for real-time data syncing. It enables users to effortlessly add, edit, delete, and track to-do items, ensuring a smooth experience across devices.
+
 ---
 
 ## Use-Case Diagram
