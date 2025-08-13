@@ -24,34 +24,39 @@ Hosted URL -> [https://md-todo.web.app/](https://md-todo.web.app/)
 The diagram below illustrates the main interactions in the **React MD ToDo App** between the user, the application, and Cloud Firestore.  
 
 ```mermaid
-flowchart LR
-    actor(User)["👤 User"]
+flowchart TD
+    %% Define "actor" as a styled node
+    U[User]:::actor
 
-    subgraph App["React MD ToDo App (Web UI)"]
-      UC_Add("(Add To-Do)")
-      UC_Edit("(Edit To-Do)")
-      UC_Delete("(Delete To-Do)")
-      UC_Toggle("(Mark Complete / Incomplete)")
-      UC_List("(View / Filter To-Dos)")
-      UC_Offline("(Optimistic UI / Local State)")
+    %% Define system boundary
+    subgraph SYSTEM["React MD ToDo Application"]
+        UC1[("Add To-Do")]
+        UC2[("Edit To-Do")]
+        UC3[("Delete To-Do")]
+        UC4[("Mark Complete / Incomplete")]
+        UC5[("View / Filter To-Dos")]
     end
 
-    ext[(Cloud Firestore)]
-    log["Change Listener / Real-time Updates"]
+    %% External system
+    DB[(Cloud Firestore)]
 
-    User --> UC_Add
-    User --> UC_Edit
-    User --> UC_Delete
-    User --> UC_Toggle
-    User --> UC_List
+    %% User interactions
+    U --> UC1
+    U --> UC2
+    U --> UC3
+    U --> UC4
+    U --> UC5
 
-    UC_Add --> ext
-    UC_Edit --> ext
-    UC_Delete --> ext
-    UC_Toggle --> ext
-    UC_List <-->|"query/read"| ext
+    %% App to database
+    UC1 --> DB
+    UC2 --> DB
+    UC3 --> DB
+    UC4 --> DB
+    UC5 --> DB
 
-    ext --> log --> App
+    %% Real-time updates
+    DB -->|"Snapshot Listener"| SYSTEM
 
-    User -. triggers .-> UC_Offline
-    UC_Offline -. updates UI .-> App
+    %% Style for actor
+    classDef actor fill:#f9f,stroke:#333,stroke-width:2px;
+```
