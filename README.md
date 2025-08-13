@@ -1,7 +1,7 @@
 # To Do App
 **To-Do** is a modern, responsive task management application built with React JS and Material UI, powered by Cloud Firestore for real-time data syncing. It enables users to add, edit, delete, and track to-do items effortlessly, ensuring a smooth device experience.
 
-## Use-Case Diagram
+### Use-Case Diagram
 
 The diagram below illustrates the main interactions in the **ToDo App** between the user, the application, and Cloud Firestore.  
 
@@ -43,7 +43,7 @@ flowchart TD
     classDef actor fill:#f9f,stroke:#333,stroke-width:2px;
 ```
 
-## Sequence Diagram
+### Sequence Diagram
 
 ```mermaid
 sequenceDiagram
@@ -73,7 +73,7 @@ sequenceDiagram
 
 Hosted URL -> [https://md-todo.web.app/](https://md-todo.web.app/)
 
-# Editor/Author
+### Editor/Author
 ![](https://meghnathdas.github.io/public/images/MD_Logo_138X138.png)
 
 [http://meghnathdas.github.io/](http://meghnathdas.github.io/)
